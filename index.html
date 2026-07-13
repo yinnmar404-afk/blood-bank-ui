@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeFlow Blood Bank | Save Lives Through Donation</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- SwiperJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/micro-interactions.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.4/dist/lenis.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>LifeFlow</span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Donate Blood</a>
+                <a href="#" class="nav-link">Request Blood</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+            <div class="blood-drops">
+                <div class="drop drop-1"></div>
+                <div class="drop drop-2"></div>
+                <div class="drop drop-3"></div>
+                <div class="drop drop-4"></div>
+                <div class="drop drop-5"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Save Lives</span>
+                    Through Blood Donation
+                </h1>
+                <p class="hero-subtitle">
+                    Every drop counts. Join our community of heroes and help us provide life-saving blood to those in need across the country.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        Donate Now
+                    </a>
+                    <a href="#" class="btn btn-outline btn-large">
+                        <i class="fas fa-search"></i>
+                        Find Blood
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                <div class="image-container">
+                    <div class="image-placeholder">
+                        <!-- Blood donation illustration placeholder -->
+                        <div class="illustration">
+                            <div class="donor"></div>
+                            <div class="blood-bag"></div>
+                            <div class="heart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section" data-aos="fade-up">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="stat-number" data-count="12500">0</h3>
+                    <p class="stat-label">Registered Donors</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="stat-number" data-count="45200">0</h3>
+                    <p class="stat-label">Lives Saved</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="stat-number" data-count="350">0</h3>
+                    <p class="stat-label">Hospitals</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="stat-number" data-count="8500">0</h3>
+                    <p class="stat-label">Blood Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Donate Section -->
+    <section class="why-donate-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Why Donate Blood?</h2>
+                <p class="section-subtitle">Your donation can make a life-saving difference</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="card-title">Save Lives</h3>
+                    <p class="card-text">
+                        A single donation can save up to three lives. Blood is needed every two seconds.
+                    </p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="card-title">Health Benefits</h3>
+                    <p class="card-text">
+                        Donating blood reduces the risk of heart disease and helps in weight management.
+                    </p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="card-title">Community Impact</h3>
+                    <p class="card-text">
+                        Join thousands of donors making a positive impact in their local communities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood Types Section -->
+    <section class="blood-types-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Blood Types We Need</h2>
+                <p class="section-subtitle">All blood types are important, but some are more in demand</p>
+            </div>
+            
+            <div class="blood-grid">
+                <div class="blood-card" data-blood="A+">
+                    <div class="blood-icon">
+                        <span>A+</span>
+                    </div>
+                    <h3 class="blood-title">A+</h3>
+                    <p class="blood-desc">32% of population</p>
+                    <div class="blood-status urgent">Urgent Need</div>
+                </div>
+                <div class="blood-card" data-blood="A-">
+                    <div class="blood-icon">
+                        <span>A-</span>
+                    </div>
+                    <h3 class="blood-title">A-</h3>
+                    <p class="blood-desc">6% of population</p>
+                    <div class="blood-status moderate">Moderate Need</div>
+                </div>
+                <div class="blood-card" data-blood="B+">
+                    <div class="blood-icon">
+                        <span>B+</span>
+                    </div>
+                    <h3 class="blood-title">B+</h3>
+                    <p class="blood-desc">10% of population</p>
+                    <div class="blood-status low">Low Need</div>
+                </div>
+                <div class="blood-card" data-blood="B-">
+                    <div class="blood-icon">
+                        <span>B-</span>
+                    </div>
+                    <h3 class="blood-title">B-</h3>
+                    <p class="blood-desc">2% of population</p>
+                    <div class="blood-status urgent">Urgent Need</div>
+                </div>
+                <div class="blood-card" data-blood="AB+">
+                    <div class="blood-icon">
+                        <span>AB+</span>
+                    </div>
+                    <h3 class="blood-title">AB+</h3>
+                    <p class="blood-desc">4% of population</p>
+                    <div class="blood-status moderate">Moderate Need</div>
+                </div>
+                <div class="blood-card" data-blood="AB-">
+                    <div class="blood-icon">
+                        <span>AB-</span>
+                    </div>
+                    <h3 class="blood-title">AB-</h3>
+                    <p class="blood-desc">1% of population</p>
+                    <div class="blood-status urgent">Urgent Need</div>
+                </div>
+                <div class="blood-card" data-blood="O+">
+                    <div class="blood-icon">
+                        <span>O+</span>
+                    </div>
+                    <h3 class="blood-title">O+</h3>
+                    <p class="blood-desc">37% of population</p>
+                    <div class="blood-status urgent">Urgent Need</div>
+                </div>
+                <div class="blood-card" data-blood="O-">
+                    <div class="blood-icon">
+                        <span>O-</span>
+                    </div>
+                    <h3 class="blood-title">O-</h3>
+                    <p class="blood-desc">8% of population</p>
+                    <div class="blood-status critical">Critical Need</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Donation Process</h2>
+                <p class="section-subtitle">Simple steps to become a blood donor</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-right">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3 class="step-title">Register</h3>
+                        <p class="step-desc">Create your donor account in minutes</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h3 class="step-title">Health Check</h3>
+                        <p class="step-desc">Quick health screening for safety</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-right" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3 class="step-title">Donate</h3>
+                        <p class="step-desc">Painless donation takes 10-15 minutes</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="step-title">Save Lives</h3>
+                        <p class="step-desc">Your donation helps save up to 3 lives</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Donor Stories</h2>
+                <p class="section-subtitle">Hear from our amazing donors</p>
+            </div>
+            
+            <div class="swiper testimonials-swiper" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"I've been donating for 5 years now. Knowing that my blood has helped save lives gives me immense satisfaction."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Regular Donor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The process was so smooth and professional. The staff made me feel comfortable throughout."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>First-time Donor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"My daughter needed blood during surgery. Thanks to donors like you, she's healthy today. I donate every 3 months."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Wilson">
+                                </div>
+                                <div class="author-info">
+                                    <h4>David Wilson</h4>
+                                    <p>Grateful Father</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2 class="cta-title">Ready to Make a Difference?</h2>
+                <p class="cta-subtitle">Join thousands of heroes who save lives every day</p>
+                <a href="register.html" class="btn btn-primary btn-cta">
+                    <i class="fas fa-star"></i>
+                    Become a Hero Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>LifeFlow</span>
+                    </a>
+                    <p class="footer-desc">
+                        We connect blood donors with those in need, making life-saving donations accessible to everyone.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Donate Blood</a></li>
+                        <li><a href="#">Find Blood</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Medical Plaza, Suite 450<br>San Francisco, CA 94107</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(415) 555-0123</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@lifeflow.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="footer-newsletter">Stay updated with our latest news and blood drives</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2023 LifeFlow Blood Bank. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/micro-interactions.js"></script>
+</body>
+</html>

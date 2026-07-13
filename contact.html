@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | LifeFlow Blood Bank</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/about-contact.css">
+    <link rel="stylesheet" href="assets/css/micro-interactions.css">
+    
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>LifeFlow</span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Donate</a>
+                <a href="#" class="nav-link">Find Blood</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content" data-aos="fade-up">
+                <h1 class="contact-hero-title">Get in Touch</h1>
+                <p class="contact-hero-subtitle">We're here to help with any questions about blood donation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info" data-aos="fade-right">
+                    <h2 class="contact-title">Contact Information</h2>
+                    <p class="contact-subtitle">Reach out to us through any of these channels</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Visit Our Center</h3>
+                                <p>123 Medical Plaza, Suite 450<br>San Francisco, CA 94107</p>
+                                <a href="#" class="method-link">Get Directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Call Us</h3>
+                                <p>(415) 555-0123<br>Mon-Fri: 8am-6pm PST</p>
+                                <a href="tel:+14155550123" class="method-link">Call Now</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>Email Us</h3>
+                                <p>info@lifeflow.org<br>We reply within 24 hours</p>
+                                <a href="mailto:info@lifeflow.org" class="method-link">Send Email</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="emergency-contact">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h3>
+                        <p>For urgent blood needs at hospitals, please call:</p>
+                        <p class="emergency-number">(415) 555-EMERGENCY</p>
+                        <p class="emergency-note">Available 24/7 for hospital emergencies only</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container" data-aos="fade-left">
+                    <div class="contact-form-card">
+                        <h2 class="form-title">Send Us a Message</h2>
+                        <p class="form-subtitle">Fill out the form below and we'll get back to you soon</p>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName" class="form-label">Full Name</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-user"></i>
+                                        <input 
+                                            type="text" 
+                                            id="contactName" 
+                                            name="name" 
+                                            placeholder="Enter your full name"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="error-message" id="nameError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail" class="form-label">Email Address</label>
+                                    <div class="input-group">
+                                        <i class="fas fa-envelope"></i>
+                                        <input 
+                                            type="email" 
+                                            id="contactEmail" 
+                                            name="email" 
+                                            placeholder="Enter your email"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="error-message" id="emailError"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPhone" class="form-label">Phone Number (Optional)</label>
+                                <div class="input-group">
+                                    <i class="fas fa-phone"></i>
+                                    <input 
+                                        type="tel" 
+                                        id="contactPhone" 
+                                        name="phone" 
+                                        placeholder="Enter your phone number"
+                                    >
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <div class="input-group">
+                                    <i class="fas fa-tag"></i>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="donation">Blood Donation Inquiry</option>
+                                        <option value="volunteer">Volunteer Opportunities</option>
+                                        <option value="partnership">Partnership & Sponsorship</option>
+                                        <option value="media">Media & Press Inquiries</option>
+                                        <option value="technical">Technical Support</option>
+                                        <option value="other">Other Questions</option>
+                                    </select>
+                                </div>
+                                <div class="error-message" id="subjectError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <div class="input-group">
+                                    <i class="fas fa-comment"></i>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        placeholder="Type your message here..."
+                                        rows="5"
+                                        required
+                                    ></textarea>
+                                </div>
+                                <div class="error-message" id="messageError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">Subscribe to our newsletter for updates on blood drives and events</span>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>Who can donate blood?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Generally, donors must be at least 18 years old (16-17 with parental consent in some areas), weigh at least 110 pounds, and be in good health. Specific eligibility criteria may vary.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">
+                        <h3>How often can I donate blood?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Whole blood donors can donate every 56 days (8 weeks). Platelet donors can donate more frequently - up to 24 times per year.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">
+                        <h3>Is donating blood safe?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, donating blood is safe. All equipment is sterile, used only once, and disposed of properly. Our staff are trained professionals who follow strict safety protocols.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question">
+                        <h3>How long does the donation process take?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The actual blood donation takes about 10-15 minutes. The entire process, including registration, health screening, and recovery, typically takes about 45-60 minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Find Our Donation Centers</h2>
+                <p class="section-subtitle">Visit one of our conveniently located centers</p>
+            </div>
+            
+            <div class="map-container" data-aos="fade-up">
+                <div class="map-placeholder">
+                    <div class="map-grid">
+                        <div class="map-location">
+                            <div class="location-marker">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="location-info">
+                                <h3>San Francisco Center</h3>
+                                <p>123 Medical Plaza, Suite 450<br>San Francisco, CA 94107</p>
+                                <p><i class="fas fa-clock"></i> Mon-Fri: 8am-6pm</p>
+                            </div>
+                        </div>
+                        <div class="map-location">
+                            <div class="location-marker">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="location-info">
+                                <h3>Oakland Center</h3>
+                                <p>456 Health Ave, Suite 200<br>Oakland, CA 94612</p>
+                                <p><i class="fas fa-clock"></i> Mon-Sat: 7am-7pm</p>
+                            </div>
+                        </div>
+                        <div class="map-location">
+                            <div class="location-marker">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="location-info">
+                                <h3>San Jose Center</h3>
+                                <p>789 Medical Center Dr<br>San Jose, CA 95128</p>
+                                <p><i class="fas fa-clock"></i> Tue-Sat: 9am-5pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>LifeFlow</span>
+                    </a>
+                    <p class="footer-desc">
+                        We connect blood donors with those in need, making life-saving donations accessible to everyone.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Donate Blood</a></li>
+                        <li><a href="#">Find Blood</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Medical Plaza, Suite 450<br>San Francisco, CA 94107</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(415) 555-0123</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@lifeflow.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="footer-newsletter">Stay updated with our latest news and blood drives</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2023 LifeFlow Blood Bank. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/micro-interactions.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>

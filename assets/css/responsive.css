@@ -1,0 +1,419 @@
+/* ===== Responsive Design ===== */
+
+/* Large Desktops (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Tablets and Small Desktops (992px to 1199px) */
+@media (max-width: 1199px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .blood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Tablets (768px to 991px) */
+@media (max-width: 991px) {
+    :root {
+        --spacing-xl: 3rem;
+        --spacing-xxl: 4rem;
+    }
+    
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .cta-title {
+        font-size: 2.5rem;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .process-step::before {
+        display: none;
+    }
+}
+
+/* Mobile (576px to 767px) */
+@media (max-width: 767px) {
+    :root {
+        --spacing-lg: 2rem;
+        --spacing-xl: 2.5rem;
+    }
+    
+    .navbar .nav-links,
+    .navbar .nav-buttons {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .navbar.active .nav-links,
+    .navbar.active .nav-buttons {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--secondary);
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-md);
+        animation: slideDown 0.3s ease-out;
+    }
+    
+    .navbar.active .nav-links {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .navbar.active .nav-link {
+        padding: 0.75rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar.active .nav-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .stats-section {
+        margin-top: -60px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .stat-card {
+        padding: var(--spacing-md);
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .blood-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-bottom-links {
+        justify-content: center;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form .btn {
+        width: 100%;
+        height: auto;
+        padding: 0.75rem;
+    }
+}
+
+/* Small Mobile (up to 575px) */
+@media (max-width: 575px) {
+    :root {
+        --spacing-md: 1.5rem;
+        --spacing-lg: 1.75rem;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .btn-large {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .blood-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blood-card {
+        padding: var(--spacing-md);
+    }
+    
+    .testimonial-card {
+        padding: var(--spacing-lg);
+        height: auto;
+    }
+    
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .btn-cta {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+/* Height-based responsive adjustments */
+@media (max-height: 700px) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 var(--spacing-xl);
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .hero-buttons,
+    .footer,
+    .swiper-pagination,
+    .blood-status,
+    .shape,
+    .drop {
+        display: none !important;
+    }
+    
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+    
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    section {
+        padding: 20px 0 !important;
+        page-break-inside: avoid;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+        color: #000 !important;
+    }
+    
+    .gradient-text {
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+        background: none !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --secondary: #1A1A1A;
+        --background: #121212;
+        --light-gray: #2D2D2D;
+        --medium-gray: #8A8A8A;
+        --dark-gray: #FFFFFF;
+        --accent: #FFFFFF;
+        --glass-bg: rgba(26, 26, 26, 0.85);
+        --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+        --gradient-light: linear-gradient(135deg, #1A1A1A, #121212);
+    }
+    
+    .hero-background {
+        background: var(--gradient-light);
+    }
+    
+    .why-card,
+    .step-content,
+    .testimonial-card,
+    .stats-section {
+        background: var(--light-gray);
+    }
+    
+    .blood-card {
+        background: var(--secondary);
+    }
+    
+    .image-placeholder {
+        background: var(--light-gray);
+    }
+    
+    .donor {
+        background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(45, 45, 45, 0.7));
+    }
+}
+
+/* Animation for mobile menu */
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .hover-grow:hover,
+    .hover-lift:hover,
+    .hover-glow:hover {
+        transform: none;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .nav-link.active::after {
+        width: 50%;
+        left: 25%;
+    }
+    
+    .btn:active {
+        transform: scale(0.98);
+    }
+    
+    .blood-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary: #FF0000;
+        --primary-dark: #CC0000;
+        --primary-light: #FF3333;
+        --secondary: #FFFFFF;
+        --background: #F0F0F0;
+        --light-gray: #E0E0E0;
+        --medium-gray: #666666;
+        --dark-gray: #000000;
+    }
+    
+    .btn-primary {
+        border-width: 3px;
+    }
+    
+    .btn-outline {
+        border-width: 2px;
+    }
+    
+    .nav-link.active::after {
+        height: 3px;
+    }
+    
+    .shape,
+    .drop {
+        border: 2px solid var(--primary);
+        background: none;
+    }
+}

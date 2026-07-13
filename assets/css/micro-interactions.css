@@ -1,0 +1,324 @@
+/* ===== Premium Micro-Interactions ===== */
+
+/* Enhanced Button Hover Effects */
+.btn {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.2s ease;
+    will-change: transform;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 6px 20px rgba(214, 40, 40, 0.3);
+}
+
+.btn-outline:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 6px 20px rgba(214, 40, 40, 0.25);
+}
+
+.btn:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
+/* Enhanced Navbar Scroll Effect */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    padding: 0.6rem 0 !important;
+    transform: scale(0.98);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Blood Card Soft Glow on Hover */
+.blood-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.blood-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 20px rgba(214, 40, 40, 0.2), 
+                0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.blood-card.urgent-need:hover,
+.blood-card.critical-need:hover {
+    animation: bloodGlowPulse 2s ease-in-out infinite;
+}
+
+@keyframes bloodGlowPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(214, 40, 40, 0.3),
+                    0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(214, 40, 40, 0.4),
+                    0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+}
+
+/* Enhanced Card Hover Effects */
+.why-card,
+.testimonial-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.why-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px) scale(1.005);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Image Floating Animation */
+.image-placeholder {
+    animation: floatImage 8s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(0.5deg);
+    }
+}
+
+/* Footer Fade In Animation */
+.footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced Form Input Focus */
+.input-group input:focus,
+.input-group select:focus {
+    transform: scale(1.01);
+    transition: transform 0.2s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Floating Label Effect */
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus + .form-label,
+.input-group input:not(:placeholder-shown) + .form-label {
+    transform: translateY(-25px) scale(0.85);
+    color: var(--primary);
+}
+
+/* Card Stagger Animation */
+.why-card,
+.blood-card,
+.stat-card,
+.process-step {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.why-card.animate,
+.blood-card.animate,
+.stat-card.animate,
+.process-step.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Page Transition Effect */
+body {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+body.page-transition {
+    opacity: 0;
+}
+
+/* Smooth Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--gradient-primary);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Enhanced Icon Hover */
+.card-icon,
+.stat-icon,
+.step-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-icon:hover,
+.stat-icon:hover,
+.step-icon:hover {
+    transform: rotate(10deg) scale(1.15);
+}
+
+/* Social Link Enhanced Hover */
+.social-link {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
+    transform: translateY(-5px) rotate(360deg) scale(1.2);
+    box-shadow: 0 8px 16px rgba(214, 40, 40, 0.3);
+}
+
+/* Nav Link Enhanced Hover */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    color: var(--primary);
+}
+
+/* Statistic Counter Animation */
+.stat-number {
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-number {
+    transform: scale(1.1);
+}
+
+/* Process Step Enhanced Animation */
+.process-step {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-step:hover {
+    transform: translateX(10px);
+}
+
+.process-step:hover .step-number {
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+/* CTA Section Enhanced */
+.cta-content {
+    transition: all 0.4s ease;
+}
+
+.cta-content:hover {
+    transform: scale(1.02);
+}
+
+/* Blood Option Selection Animation */
+.blood-option {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blood-option:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.blood-option.selected {
+    animation: selectPulse 0.4s ease;
+}
+
+@keyframes selectPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Checkbox/Radio Enhanced Animation */
+.checkbox-container:hover .checkmark,
+.radio-container:hover .radio-checkmark {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.checkbox-container input:checked ~ .checkmark,
+.radio-container input:checked ~ .radio-checkmark {
+    animation: checkmarkPop 0.3s ease;
+}
+
+@keyframes checkmarkPop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .btn-primary:hover,
+    .btn-outline:hover {
+        transform: translateY(-2px);
+    }
+    
+    .blood-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .why-card:hover {
+        transform: translateY(-6px) scale(1.01);
+    }
+}
