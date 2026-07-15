@@ -42,62 +42,22 @@ document.addEventListener('DOMContentLoaded', function() {
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smooth: true,
         });
-
+        
+        // Integrate Lenis with GSAP ScrollTrigger for optimal performance
+        lenis.on('scroll', ScrollTrigger.update);
+        
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        
+        gsap.ticker.lagSmoothing(0);
+ 
         function raf(time) {
             lenis.raf(time);
             requestAnimationFrame(raf);
         }
-
+ 
         requestAnimationFrame(raf);
-    }
-
-    // Initialize GSAP Scroll Animations
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Animate blood drops
-        const drops = document.querySelectorAll('.drop');
-        if (drops.length > 0) {
-            drops.forEach((drop, index) => {
-                gsap.to(drop, {
-                    y: 20,
-                    x: 10,
-                    duration: 2,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut",
-                    delay: index * 0.5
-                });
-            });
-        }
-
-        // Animate floating shapes
-        const shapes = document.querySelectorAll('.shape');
-        if (shapes.length > 0) {
-            shapes.forEach((shape, index) => {
-                gsap.to(shape, {
-                    y: -30,
-                    x: 20,
-                    rotation: 5,
-                    duration: 3,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut",
-                    delay: index * 0.3
-                });
-            });
-        }
-
-        // Animate hero content
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-            gsap.from(heroContent, {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: "power3.out"
-            });
-        }
     }
 
     // Animated counters for statistics

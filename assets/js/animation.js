@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Page load animations
         initPageLoadAnimations();
+
+        // Re-initialize parallax with GSAP
+        initParallax();
     }
     
     // Initialize AOS fallback animations
@@ -55,6 +58,23 @@ function initHeroAnimations() {
             opacity: 0,
             ease: "power3.out",
             delay: 0.5
+        });
+    }
+}
+
+// ===== Parallax Animation (GSAP version) =====
+function initParallax() {
+    const heroBackground = document.querySelector('.hero-background');
+    if (heroBackground && typeof gsap !== 'undefined') {
+        gsap.to(heroBackground, {
+            y: "-20%", // Move up by 20% of its own height
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true // Smoothly scrubs the animation on scroll
+            }
         });
     }
     
@@ -409,55 +429,6 @@ function initAOSFallback() {
     }
 }
 
-// ===== Scroll Animations =====
-function initScrollAnimations() {
-    // Parallax effect for hero background
-    const heroBackground = document.querySelector('.hero-background');
-    if (heroBackground) {
-        window.addEventListener('scroll', throttle(function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            heroBackground.style.transform = `translate3d(0, ${rate}px, 0)`;
-        }, 16));
-    }
-    
-    // Navbar background change on scroll
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        window.addEventListener('scroll', throttle(function() {
-            if (window.pageYOffset > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
-            } else {
-                navbar.style.background = 'var(--glass-bg)';
-                navbar.style.backdropFilter = 'blur(10px)';
-            }
-        }, 16));
-    }
-    
-    // Progress indicator for scroll
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress';
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: var(--gradient-primary);
-        z-index: 9999;
-        transition: width 0.1s ease;
-    `;
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', throttle(function() {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        progressBar.style.width = scrolled + '%';
-    }, 16));
-}
-
 // ===== Hover Animations =====
 function initHoverAnimations() {
     // Icon hover animations
@@ -519,20 +490,6 @@ function initHoverAnimations() {
             }
         });
     });
-}
-
-// ===== Helper Functions =====
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
 }
 
 // Debounce function for resize events

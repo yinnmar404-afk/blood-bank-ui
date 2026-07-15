@@ -1,39 +1,39 @@
 /* ===== CSS Variables ===== */
 :root {
     /* Colors */
-    --primary: #D62828;
-    --primary-dark: #B21E1E;
-    --primary-light: #F05454;
-    --secondary: #FFFFFF;
-    --accent: #2D2D2D;
-    --background: #F8F9FA;
-    --light-gray: #E9ECEF;
-    --medium-gray: #6C757D;
-    --dark-gray: #343A40;
-    --success: #28A745;
-    --warning: #FFC107;
-    --danger: #DC3545;
-    --info: #17A2B8;
-    
+    --primary: #d62828;
+    --primary-dark: #b21e1e;
+    --primary-light: #f05454;
+    --secondary: #ffffff;
+    --accent: #2d2d2d;
+    --background: #f8f9fa;
+    --light-gray: #e9ecef;
+    --medium-gray: #6c757d;
+    --dark-gray: #343a40;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --info: #17a2b8;
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
-    --gradient-light: linear-gradient(135deg, #FFFFFF, var(--background));
-    
+    --gradient-light: linear-gradient(135deg, #ffffff, var(--background));
+
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
-    
+
     /* Glass Effect */
     --glass-bg: rgba(255, 255, 255, 0.85);
     --glass-border: 1px solid rgba(255, 255, 255, 0.2);
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    
+
     /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    
+    --font-primary: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -41,14 +41,14 @@
     --spacing-lg: 3rem;
     --spacing-xl: 4rem;
     --spacing-xxl: 6rem;
-    
+
     /* Border Radius */
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-xl: 32px;
     --radius-pill: 9999px;
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -74,7 +74,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 600;
     line-height: 1.2;
@@ -222,7 +227,7 @@ section {
 }
 
 .nav-link.active::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -469,7 +474,7 @@ section {
 }
 
 .heart::before {
-    content: '❤️';
+    content: "❤️";
 }
 
 /* ===== Statistics Section ===== */
@@ -653,22 +658,22 @@ section {
 
 .blood-status.urgent {
     background: rgba(255, 107, 107, 0.2);
-    color: #FF6B6B;
+    color: #ff6b6b;
 }
 
 .blood-status.critical {
     background: rgba(255, 43, 43, 0.2);
-    color: #FF2B2B;
+    color: #ff2b2b;
 }
 
 .blood-status.moderate {
     background: rgba(255, 193, 7, 0.2);
-    color: #FFC107;
+    color: #ffc107;
 }
 
 .blood-status.low {
     background: rgba(40, 167, 69, 0.2);
-    color: #28A745;
+    color: #28a745;
 }
 
 /* ===== Process Section ===== */
@@ -983,4 +988,47 @@ section {
 
 .footer-bottom-links a:hover {
     color: var(--primary);
+}
+
+.splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.splide__slide {
+    opacity: 0.6;
+}
+
+.splide__slide.is-active {
+    opacity: 1;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
 }
