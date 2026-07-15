@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (passwordInput) passwordInput.setAttribute('autocomplete', 'current-password');
     
     // Initialize animations
-    initLoginAnimations();
+    // initLoginAnimations(); // This is now handled by form-helpers.js
 });
 
 // ===== Validation Functions =====
@@ -183,32 +183,6 @@ function validatePassword() {
     return validatePasswordField();
 }
 
-// ===== Helper Functions =====
-function isValidEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-function showError(input, errorElement, message) {
-    if (errorElement) {
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-    }
-    
-    input.classList.add('error');
-    input.style.borderColor = 'var(--danger)';
-    input.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
-    
-    // Focus the input
-    input.focus();
-    
-    // Add shake animation
-    input.style.animation = 'shake 0.5s ease-in-out';
-    setTimeout(() => {
-        input.style.animation = '';
-    }, 500);
-}
-
 function showSuccess(input) {
     input.classList.remove('error');
     input.classList.add('success');
@@ -221,18 +195,6 @@ function showSuccess(input) {
         setTimeout(() => {
             errorElement.style.display = 'none';
         }, 2000);
-    }
-}
-
-function clearError(e) {
-    const input = e.target;
-    input.classList.remove('error');
-    input.style.borderColor = '';
-    input.style.boxShadow = '';
-    
-    const errorElement = input.nextElementSibling || input.parentElement.nextElementSibling;
-    if (errorElement && errorElement.classList.contains('error-message')) {
-        errorElement.style.display = 'none';
     }
 }
 
@@ -455,46 +417,4 @@ function showForgotPasswordModal() {
     resetEmail.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') submitBtn.click();
     });
-}
-
-function initLoginAnimations() {
-    // Add CSS animations
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-        
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes slideOutRight {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-        
-        .success-message .success-content {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .success-message i {
-            font-size: 1.25rem;
-        }
-        
-        input.error {
-            animation: shake 0.5s ease-in-out;
-        }
-        
-        input.success {
-            border-color: var(--success) !important;
-        }
-    `;
-    
-    document.head.appendChild(style);
 }

@@ -201,24 +201,19 @@ function initScrollProgress() {
         document.body.appendChild(progressBar);
     }
     
-    // Update progress on scroll with better throttling
-    let ticking = false;
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(function() {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                
-                const progressBar = document.querySelector('.scroll-progress');
-                if (progressBar) {
-                    progressBar.style.width = scrolled + '%';
-                }
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
+    // Use GSAP for a performant scroll progress bar
+    if (typeof gsap !== 'undefined') {
+        gsap.to(".scroll-progress", {
+            width: "100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true
+            }
+        });
+    }
 }
 
 // ===== Footer Animation =====
@@ -508,20 +503,6 @@ function animateCounter(element, target, suffix = '') {
             element.textContent = Math.floor(current).toLocaleString() + suffix;
         }, 20);
     }
-}
-
-// ===== Throttle Function =====
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
 }
 
 // ===== Debounce Function =====

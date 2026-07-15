@@ -20,8 +20,19 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/micro-interactions.css">
+
+    <style>
+        .phone-input-group { display: flex; align-items: center; border: 1px solid var(--light-gray); border-radius: var(--radius-md); background: white; transition: var(--transition-normal); }
+        .phone-input-group:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.1); }
+        .phone-prefix { padding: 0 15px; color: var(--dark-gray); font-weight: 500; border-right: 1px solid var(--light-gray); }
+        .phone-input-group input { border: none; padding-left: 15px; flex-grow: 1; }
+        .phone-input-group input:focus { box-shadow: none; }
+        .login-form .checkbox-container { margin-top: var(--spacing-md); }
+        .login-form .btn-login { margin-top: var(--spacing-md); }
+        .terms-link { color: var(--primary); font-weight: 600; text-decoration: none; }
+    </style>
     
     <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
 </head>
@@ -54,224 +65,73 @@
     </nav>
 
     <!-- Register Section -->
-    <section class="register-section">
+    <section class="login-section">
         <div class="container">
-            <div class="register-container">
-                <!-- Progress Steps -->
-                <div class="register-progress" data-aos="fade-down">
-                    <div class="progress-steps">
-                        <div class="step active" data-step="1">
-                            <div class="step-number">1</div>
-                            <div class="step-text">
-                                <span class="step-title">Personal Info</span>
-                                <span class="step-desc">Basic details</span>
+            <div class="login-container">
+                <!-- Left Side - Illustration -->
+                <div class="login-left" data-aos="fade-right">
+                    <div class="login-illustration">
+                        <div class="illustration-content">
+                            <h2 class="illustration-title">Join a Community of Heroes</h2>
+                            <p class="illustration-text">
+                                Create your account to start your journey of saving lives. It's quick, easy, and impactful.
+                            </p>
+                            <div class="illustration-image">
+                                <div class="login-heart">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="login-drops">
+                                    <div class="drop"></div>
+                                    <div class="drop"></div>
+                                    <div class="drop"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="step" data-step="2">
-                            <div class="step-number">2</div>
-                            <div class="step-text">
-                                <span class="step-title">Health Info</span>
-                                <span class="step-desc">Blood type & health</span>
-                            </div>
-                        </div>
-                        <div class="step" data-step="3">
-                            <div class="step-number">3</div>
-                            <div class="step-text">
-                                <span class="step-title">Account Setup</span>
-                                <span class="step-desc">Credentials</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill"></div>
                     </div>
                 </div>
 
-                <!-- Register Form -->
-                <div class="register-card" data-aos="fade-up">
-                    <div class="register-header">
-                        <h1 class="register-title">Become a Lifesaver</h1>
-                        <p class="register-subtitle">Join our community of heroes</p>
-                    </div>
-
-                    <form class="register-form" id="registerForm">
-                        <!-- Step 1: Personal Information -->
-                        <div class="form-step active" data-step="1">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="fullName" class="form-label">Full Name</label>
-                                    <div class="input-group">
-                                        <i class="fas fa-user"></i>
-                                        <input 
-                                            type="text" 
-                                            id="fullName" 
-                                            name="fullName" 
-                                            placeholder="Enter your full name"
-                                            required
-                                        >
-                                    </div>
-                                    <div class="error-message" id="fullNameError"></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email" class="form-label">Email Address</label>
-                                    <div class="input-group">
-                                        <i class="fas fa-envelope"></i>
-                                        <input 
-                                            type="email" 
-                                            id="email" 
-                                            name="email" 
-                                            placeholder="Enter your email"
-                                            required
-                                        >
-                                    </div>
-                                    <div class="error-message" id="emailError"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone" class="form-label">Phone Number</label>
-                                    <div class="input-group">
-                                        <i class="fas fa-phone"></i>
-                                        <input 
-                                            type="tel" 
-                                            id="phone" 
-                                            name="phone" 
-                                            placeholder="Enter your phone number"
-                                            required
-                                        >
-                                    </div>
-                                    <div class="error-message" id="phoneError"></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="gender" class="form-label">Gender</label>
-                                    <div class="input-group">
-                                        <i class="fas fa-venus-mars"></i>
-                                        <select id="gender" name="gender" required>
-                                            <option value="">Select gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
-                                            <option value="other">Other</option>
-                                            <option value="prefer-not-to-say">Prefer not to say</option>
-                                        </select>
-                                    </div>
-                                    <div class="error-message" id="genderError"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="dob" class="form-label">Date of Birth</label>
-                                    <div class="input-group">
-                                        <i class="fas fa-birthday-cake"></i>
-                                        <input 
-                                            type="date" 
-                                            id="dob" 
-                                            name="dob" 
-                                            required
-                                            max="2005-01-01"
-                                        >
-                                    </div>
-                                    <div class="error-message" id="dobError"></div>
-                                </div>
-                            </div>
+                <!-- Right Side - Register Form -->
+                <div class="login-right" data-aos="fade-left">
+                    <div class="login-card">
+                        <div class="login-header">
+                            <h1 class="login-title">Create Your Account</h1>
+                            <p class="login-subtitle">Become a lifesaver today</p>
                         </div>
 
-                        <!-- Step 2: Health Information -->
-                        <div class="form-step" data-step="2">
+                        <form class="login-form" id="registerForm" novalidate>
                             <div class="form-group">
-                                <label for="bloodGroup" class="form-label">Blood Group</label>
-                                <div class="blood-group-selector">
-                                    <div class="blood-options">
-                                        <div class="blood-option" data-blood="A+">
-                                            <span>A+</span>
-                                        </div>
-                                        <div class="blood-option" data-blood="A-">
-                                            <span>A-</span>
-                                        </div>
-                                        <div class="blood-option" data-blood="B+">
-                                            <span>B+</span>
-                                        </div>
-                                        <div class="blood-option" data-blood="B-">
-                                            <span>B-</span>
-                                        </div>
-                                        <div class="blood-option" data-blood="AB+">
-                                            <span>AB+</span>
-                                        </div>
-                                        <div class="blood-option" data-blood="AB-">
-                                            <span>AB-</span>
-                                        </div>
-                                        <div class="blood-option" data-blood="O+">
-                                            <span>O+</span>
-                                        </div>
-                                        <div class="blood-option" data-blood="O-">
-                                            <span>O-</span>
-                                        </div>
-                                    </div>
-                                    <input type="hidden" id="bloodGroup" name="bloodGroup" required>
-                                    <div class="error-message" id="bloodGroupError"></div>
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
                                 </div>
+                                <div class="error-message" id="fullNameError"></div>
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">Health Status</label>
-                                <div class="health-questions">
-                                    <div class="health-question">
-                                        <p>Have you donated blood in the last 3 months?</p>
-                                        <div class="radio-group">
-                                            <label class="radio-container">
-                                                <input type="radio" name="recentDonation" value="yes">
-                                                <span class="radio-checkmark"></span>
-                                                <span class="radio-label">Yes</span>
-                                            </label>
-                                            <label class="radio-container">
-                                                <input type="radio" name="recentDonation" value="no" checked>
-                                                <span class="radio-checkmark"></span>
-                                                <span class="radio-label">No</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="health-question">
-                                        <p>Do you have any chronic illnesses?</p>
-                                        <div class="radio-group">
-                                            <label class="radio-container">
-                                                <input type="radio" name="chronicIllness" value="yes">
-                                                <span class="radio-checkmark"></span>
-                                                <span class="radio-label">Yes</span>
-                                            </label>
-                                            <label class="radio-container">
-                                                <input type="radio" name="chronicIllness" value="no" checked>
-                                                <span class="radio-checkmark"></span>
-                                                <span class="radio-label">No</span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                <label for="email" class="form-label">Email Address</label>
+                                <div class="input-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                                 </div>
+                                <div class="error-message" id="emailError"></div>
                             </div>
-                        </div>
 
-                        <!-- Step 3: Account Setup -->
-                        <div class="form-step" data-step="3">
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <div class="input-group phone-input-group">
+                                    <span class="phone-prefix">+95</span>
+                                    <input type="tel" id="phone" name="phone" placeholder="9 123 45678" required>
+                                </div>
+                                <div class="error-message" id="phoneError"></div>
+                            </div>
+
                             <div class="form-group">
                                 <label for="password" class="form-label">Password</label>
                                 <div class="input-group">
                                     <i class="fas fa-lock"></i>
-                                    <input 
-                                        type="password" 
-                                        id="password" 
-                                        name="password" 
-                                        placeholder="Create a strong password"
-                                        required
-                                    >
-                                    <button type="button" class="toggle-password" id="togglePassword">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                                <div class="password-strength" id="passwordStrength">
-                                    <div class="strength-bar">
-                                        <div class="strength-fill" id="strengthFill"></div>
-                                    </div>
-                                    <span class="strength-text" id="strengthText">Weak</span>
+                                    <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                                    <button type="button" class="toggle-password" id="togglePassword" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
                                 </div>
                                 <div class="error-message" id="passwordError"></div>
                             </div>
@@ -280,55 +140,38 @@
                                 <label for="confirmPassword" class="form-label">Confirm Password</label>
                                 <div class="input-group">
                                     <i class="fas fa-lock"></i>
-                                    <input 
-                                        type="password" 
-                                        id="confirmPassword" 
-                                        name="confirmPassword" 
-                                        placeholder="Confirm your password"
-                                        required
-                                    >
-                                    <button type="button" class="toggle-password" id="toggleConfirmPassword">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
+                                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                                    <button type="button" class="toggle-password" id="toggleConfirmPassword" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
                                 </div>
                                 <div class="error-message" id="confirmPasswordError"></div>
                             </div>
 
                             <div class="form-group">
-                                <label class="checkbox-container terms-checkbox">
+                                <label class="checkbox-container">
                                     <input type="checkbox" id="terms" name="terms" required>
                                     <span class="checkmark"></span>
-                                    <span class="checkbox-label">
-                                        I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>. I understand that my information will be used for blood donation purposes only.
-                                    </span>
+                                    <span class="checkbox-label">I agree to the <a href="#" class="terms-link">Terms & Conditions</a></span>
                                 </label>
                                 <div class="error-message" id="termsError"></div>
                             </div>
-                        </div>
 
-                        <!-- Form Navigation -->
-                        <div class="form-navigation">
-                            <button type="button" class="btn btn-outline btn-prev" id="prevBtn">
-                                <i class="fas fa-arrow-left"></i>
-                                Previous
-                            </button>
-                            <button type="button" class="btn btn-primary btn-next" id="nextBtn">
-                                Next Step
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                            <button type="submit" class="btn btn-primary btn-login" id="submitBtn">
                                 <i class="fas fa-user-plus"></i>
                                 Create Account
                             </button>
-                        </div>
-                    </form>
+
+                            <div class="login-footer">
+                                <p>Already have an account? <a href="login.html" class="signup-link">Sign In</a></p>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Success Modal -->
-    <div class="modal-overlay" id="successModal">
+    <div class="modal-overlay" id="successModal" style="display: none;">
         <div class="modal-content">
             <div class="modal-success">
                 <div class="success-icon">
@@ -428,7 +271,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/form-helpers.js"></script>
     <script src="assets/js/register.js"></script>
     <script src="assets/js/micro-interactions.js"></script>
     

@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentPath = window.location.pathname;
     
     // Navbar scroll effect
-    window.addEventListener('scroll', throttle(function() {
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    }, 100));
+    });
     
     // Initialize scroll state
     if (window.scrollY > 50) {
@@ -204,21 +204,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// ===== Helper Functions =====
-
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
 
 function debounce(func, wait) {
     let timeout;
