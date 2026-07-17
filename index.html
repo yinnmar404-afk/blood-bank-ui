@@ -100,13 +100,29 @@
       .hero-swiper .swiper-slide {
         background-size: cover;
         background-position: center;
-        /* Added for slide identification */
+        background-color: #2d2d2d; /* Dark placeholder background */
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 5rem;
-        font-weight: bold;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Loader for Hero Carousel Slides */
+      .slide-loader {
+        width: 48px;
+        height: 48px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-bottom-color: #fff;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      .swiper-slide.slide-loaded .slide-loader {
+        display: none;
+      }
+      @keyframes rotation {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
       .hero-overlay {
         position: relative;
@@ -174,11 +190,17 @@
       <div class="swiper hero-swiper">
         <div class="swiper-wrapper">
           <!-- Slide 1 -->
-          <div class="swiper-slide" style="background-color: #d62828">1</div>
+          <div class="swiper-slide" data-background="https://images.unsplash.com/photo-1615461066159-fea0910e8314?q=80&w=2070&auto=format&fit=crop">
+            <div class="slide-loader"></div>
+          </div>
           <!-- Slide 2 -->
-          <div class="swiper-slide" style="background-color: #f77f00">2</div>
+          <div class="swiper-slide" data-background="https://images.unsplash.com/photo-1536064479547-7ee40b74b807?q=80&w=1974&auto=format&fit=crop">
+            <div class="slide-loader"></div>
+          </div>
           <!-- Slide 3 -->
-          <div class="swiper-slide" style="background-color: #fcbf49">3</div>
+          <div class="swiper-slide" data-background="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop">
+            <div class="slide-loader"></div>
+          </div>
         </div>
       </div>
       <!-- Glass Overlay -->
@@ -675,6 +697,17 @@
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
   </body>
   <script>
+    // Lazy load hero carousel images
+    document.querySelectorAll('.hero-swiper .swiper-slide[data-background]').forEach(slide => {
+        const bgUrl = slide.getAttribute('data-background');
+        const img = new Image();
+        img.src = bgUrl;
+        img.onload = function() {
+            slide.style.backgroundImage = `url(${bgUrl})`;
+            slide.classList.add('slide-loaded');
+        };
+    });
+
     // Hero Carousel Initialization
     const heroSwiper = new Swiper('.hero-swiper', {
       loop: true,
